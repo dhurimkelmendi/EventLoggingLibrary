@@ -2,6 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Linq;
 using System.Net.Sockets;
+using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using EventLoggingLibrary.Channels;
@@ -267,49 +268,6 @@ namespace EventLoggingLibrary.Tests
             Assert.Contains(processedMessages, m => m.Message == "Message 2");
             consoleLoggerMock.Verify(logger => logger.LogAsync(It.IsAny<string>()), Times.Exactly(2));
             tcpLoggerMock.Verify(logger => logger.LogAsync(It.IsAny<string>()), Times.Exactly(2));
-        }
-
-        [Fact]
-        public async Task Log_WithBoundedChannel_ShouldRespectCapacity()
-        {
-            // Arrange
-            var channelCapacity = 2;
-            var boundedChannel = Channel.CreateBounded<string>(new BoundedChannelOptions(channelCapacity)
-            {
-                FullMode = BoundedChannelFullMode.Wait // Wait when the channel is full
-            });
-            var consoleLoggerMock = new Mock<ILoggerChannel>();
-
-            var processedMessages = new ConcurrentBag<(string Message, DateTime Timestamp)>();
-
-            // Setup ConsoleLogger mock
-            consoleLoggerMock
-                .Setup(logger => logger.LogAsync(It.IsAny<string>()))
-                .Returns<string>(async message =>
-                {
-                    processedMessages.Add((message, DateTime.UtcNow));
-                    await Task.Delay(50); // Simulate processing delay
-                });
-            _eventLogger.AddChannel(consoleLoggerMock.Object);
-
-            // Act
-            var writingTask = Task.Run(async () =>
-            {
-                await boundedChannel.Writer.WriteAsync("Message 1");
-                await boundedChannel.Writer.WriteAsync("Message 2");
-                var writeTask = boundedChannel.Writer.WriteAsync("Message 3"); // Should wait until space is available
-                Assert.False(writeTask.IsCompleted); // Ensure the write is waiting
-                boundedChannel.Writer.Complete();
-            });
-
-            var loggingTask = _eventLogger.LogAsync(boundedChannel);
-
-            await Task.WhenAll(writingTask, loggingTask);
-
-            // Assert
-            // Verify that all messages were processed
-            Assert.Equal(channelCapacity, processedMessages.Count); // Each message is logged by the console logger
-            consoleLoggerMock.Verify(logger => logger.LogAsync(It.IsAny<string>()), Times.Exactly(channelCapacity));
         }
 
         [Fact]

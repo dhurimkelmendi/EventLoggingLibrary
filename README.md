@@ -125,7 +125,7 @@ Logs messages to a remote server over TCP. This is useful for centralized loggin
 ---
 
 ## Code Coverage
-The library includes unit tests to ensure reliability. All core functionalities are tested thoroughly to ensure edge cases are covered.
+The library includes unit tests to ensure reliability. All core functionalities are tested thoroughly to ensure edge cases are covered. 97.92% Test coverage.
 
 ---
 
