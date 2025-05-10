@@ -101,3 +101,4 @@
 /Users/dhurimkelmendi/workspace/EventLoggingLibrary/tests/obj/Debug/net8.0/EventLoggingLibrary.Tests.pdb
 /Users/dhurimkelmendi/workspace/EventLoggingLibrary/tests/obj/Debug/net8.0/EventLoggingLibrary.Tests.genruntimeconfig.cache
 /Users/dhurimkelmendi/workspace/EventLoggingLibrary/tests/obj/Debug/net8.0/ref/EventLoggingLibrary.Tests.dll
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/tests/obj/Debug/net8.0/EventLoggingLibrary.Tests.sourcelink.json

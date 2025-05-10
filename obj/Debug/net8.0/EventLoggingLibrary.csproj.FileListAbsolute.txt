@@ -1,2 +1,0 @@
-/Users/dhurimkelmendi/workspace/EventLoggingLibrary/obj/Debug/net8.0/EventLoggingLibrary.GeneratedMSBuildEditorConfig.editorconfig
-/Users/dhurimkelmendi/workspace/EventLoggingLibrary/obj/Debug/net8.0/EventLoggingLibrary.csproj.CoreCompileInputs.cache
