@@ -1,0 +1,9 @@
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/bin/Debug/net8.0/EventLoggingLibrary.deps.json
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/bin/Debug/net8.0/EventLoggingLibrary.dll
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/bin/Debug/net8.0/EventLoggingLibrary.pdb
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/obj/Debug/net8.0/EventLoggingLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/obj/Debug/net8.0/EventLoggingLibrary.csproj.CoreCompileInputs.cache
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/obj/Debug/net8.0/EventLoggingLibrary.dll
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/obj/Debug/net8.0/refint/EventLoggingLibrary.dll
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/obj/Debug/net8.0/EventLoggingLibrary.pdb
+/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/obj/Debug/net8.0/ref/EventLoggingLibrary.dll

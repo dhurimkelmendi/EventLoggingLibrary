@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "qf4zcKidNM0=",
+  "success": true,
+  "projectFilePath": "/Users/dhurimkelmendi/workspace/EventLoggingLibrary/src/EventLoggingLibrary.csproj",
+  "expectedPackageFiles": [
+    "/Users/dhurimkelmendi/.nuget/packages/system.threading.channels/5.0.0/system.threading.channels.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
